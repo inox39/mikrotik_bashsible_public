@@ -1,0 +1,37 @@
+[home_routers]
+hexShome  ansible_host=192.168.14.1
+ac2home   ansible_host=192.168.14.3
+acLitehome ansible_host=192.168.14.23
+
+[gns_routers]
+ac2  ansible_host=192.168.99.1
+cap1 ansible_host=192.168.99.2
+cap2 ansible_host=192.168.99.3
+cap3 ansible_host=192.168.99.4
+
+[azk_routers]
+azk201 ansible_host=172.25.200.201
+azk202 ansible_host=172.25.200.202
+azk205 ansible_host=172.25.200.205
+azk207 ansible_host=172.25.200.207
+azk210 ansible_host=172.25.200.210
+azk214 ansible_host=172.25.200.214
+azk215 ansible_host=172.25.200.215
+azk218 ansible_host=172.25.200.218
+azk219 ansible_host=172.25.200.219
+azk222 ansible_host=172.25.200.222
+azk223 ansible_host=172.25.200.223
+azk224 ansible_host=172.25.200.224
+azk225 ansible_host=172.25.200.225
+azk226 ansible_host=172.25.200.226
+azk227 ansible_host=172.25.200.227
+azk230 ansible_host=172.25.200.230
+azk231 ansible_host=172.25.200.231
+azk232 ansible_host=172.25.200.232
+
+[Lyublino]
+LHG-sasa-sacha ansible_host=192.168.23.1
+AcLite-sasa-dacha ansible_host=192.168.23.2
+LHG-mama ansible_host=192.168.18.1
+AcLite-mama ansible_host=192.168.18.2
+hApLite-sasa ansible_host=192.168.22.1

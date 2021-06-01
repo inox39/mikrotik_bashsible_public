@@ -1,0 +1,21 @@
+---
+
+#script from spw.ru + some changes
+
+- name: Create bridge-interfaces
+  hosts: acLitehome
+  gather_facts: false
+
+  tasks:
+       
+    - name: Create bridge
+      routeros_command:
+        commands:
+          - /interface bridge add name=Li_Wi-Fi
+          - /ip address add addr=192.168.8.1/24 interface=Li_Wi-Fi
+          - /int bridge port add bridge=Li_Wi-Fi interface=ether4
+          - /interface bridge print
+      register: bridge_print
+      
+    - name: debug print
+      debug: var=bridge_print.stdout_lines

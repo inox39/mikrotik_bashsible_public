@@ -1,0 +1,28 @@
+---
+
+- name: Save file from router
+  hosts: home_routers
+  gather_facts: false
+
+  tasks:
+
+    - name: Get timestamp from the system
+      shell: "date +%Y-%m-%d"
+      register: tstamp
+
+    - name: Set variables
+      set_fact:
+      cur_date: "{{ tstamp.stdout[0:10]}}"
+
+    - name: backup-file create
+      routeros_command:
+        commands:
+# try to identity backup file with hostname, but ansible are not understand it at vars.
+#          - / :local sysname [/system identity get name];
+          - /export file=backup
+
+    - name: backup-file download
+      net_get:
+        src: backup.rsc
+        dest: ros-backups/{{ inventory_hostname }}_{{ cur_date }}.rsc
+        protocol: sftp

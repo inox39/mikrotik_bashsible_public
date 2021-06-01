@@ -1,0 +1,21 @@
+---
+
+- name: Create new Mikrotik User
+  hosts: home_routers
+  gather_facts: false
+
+  tasks:
+
+    - name: Create user
+      routeros_command:
+        commands: user add name=new_adm password=someSecPass123 disabled=yes group=read
+# select and uncomment some functions
+#          - /user add name=inform_adm password=someSecPass123 disabled=yes group=read
+#          - /user set disabled=no inform_adm
+#          - /user set group=full inform_adm
+#          - /user print
+
+        wait_for: result[0] contains new
+#      register: user_print
+#    - name: debug print
+#      debug: var=user_print.stdout_lines

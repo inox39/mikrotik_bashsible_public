@@ -1,0 +1,16 @@
+---
+# script from spw.ru
+
+- name: Getting data from routers
+  hosts: routers
+  gather_facts: false
+
+  tasks:
+
+    - name: system command
+      routeros_command:
+        commands: /system routerboard print
+      register: system_print
+
+    - name: debug print
+      debug: var=system_print.stdout_lines

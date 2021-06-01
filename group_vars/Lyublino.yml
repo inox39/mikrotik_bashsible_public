@@ -1,0 +1,10 @@
+---
+
+ansible_connection: network_cli
+ansible_network_os: routeros
+ansible_user: new_adm
+ansible_password: New_Adm#pAss
+gather_facts: no
+#ansible_become: yes
+#ansible_become_method: enable
+#ansible_become_pass: user
